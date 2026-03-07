@@ -1,9 +1,7 @@
 import streamlit as st
 import numpy as np
 
-# -------------------------------------------------
 # PAGE CONFIG
-# -------------------------------------------------
 
 st.set_page_config(
     page_title="Hill Cipher Tool",
@@ -11,9 +9,8 @@ st.set_page_config(
     layout="centered"
 )
 
-# -------------------------------------------------
+
 # CUSTOM CSS
-# -------------------------------------------------
 
 st.markdown("""
 <style>
@@ -57,16 +54,12 @@ margin-top:20px;
 </style>
 """, unsafe_allow_html=True)
 
-# -------------------------------------------------
 # TITLE
-# -------------------------------------------------
 
 st.markdown('<div class="main-title">🔐 Hill Cipher Encryption Tool</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-title">Python + Linear Algebra + Cryptography</div>', unsafe_allow_html=True)
 
-# -------------------------------------------------
 # FUNCTIONS
-# -------------------------------------------------
 
 def text_to_numbers(text):
     return [ord(char) - ord('A') for char in text]
@@ -82,9 +75,8 @@ def mod_inverse(a, m):
     return None
 
 
-# -------------------------------
+
 # ENCRYPT
-# -------------------------------
 
 def encrypt(plaintext, key_matrix, size):
 
@@ -107,9 +99,7 @@ def encrypt(plaintext, key_matrix, size):
     return cipher_text
 
 
-# -------------------------------
 # DECRYPT
-# -------------------------------
 
 def decrypt(ciphertext, key_matrix, size):
 
@@ -138,9 +128,7 @@ def decrypt(ciphertext, key_matrix, size):
     return plaintext
 
 
-# -------------------------------------------------
 # UI CARD
-# -------------------------------------------------
 
 st.markdown('<div class="card">', unsafe_allow_html=True)
 
@@ -184,9 +172,7 @@ run = st.button("🚀 Run Cipher")
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# -------------------------------------------------
 # RUN
-# -------------------------------------------------
 
 if run:
 
